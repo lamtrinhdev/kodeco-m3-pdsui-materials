@@ -46,10 +46,30 @@ struct FinancialEntry: Identifiable {
 @main
 struct BudgetTrackerApp: App {
   let entries = [
-    FinancialEntry(id: UUID(), amount: 3000, category: "Income", isExpense: false),
-    FinancialEntry(id: UUID(), amount: 120, category: "Groceries", isExpense: true),
-    FinancialEntry(id: UUID(), amount: 500, category: "Technology", isExpense: true),
-    FinancialEntry(id: UUID(), amount: 10, category: "Subscription", isExpense: true)
+    FinancialEntry(
+      id: UUID(),
+      amount: 3000,
+      category: "Income",
+      isExpense: false
+    ),
+    FinancialEntry(
+      id: UUID(),
+      amount: 120,
+      category: "Groceries",
+      isExpense: true
+    ),
+    FinancialEntry(
+      id: UUID(),
+      amount: 500,
+      category: "Technology",
+      isExpense: true
+    ),
+    FinancialEntry(
+      id: UUID(),
+      amount: 10,
+      category: "Subscription",
+      isExpense: true
+    )
   ]
 
   let expenseTextColor = Color.orange
@@ -58,7 +78,11 @@ struct BudgetTrackerApp: App {
   var body: some Scene {
     WindowGroup {
       // 2.
-      ContentView(entries: entries, expenseTextColor: expenseTextColor, incomeTextColor: incomeTextColor)
+      ContentView(
+        entries: entries,
+        expenseTextColor: expenseTextColor,
+        incomeTextColor: incomeTextColor
+      )
     }
   }
 }
@@ -75,7 +99,11 @@ struct ContentView: View {
         Section(header: Text("Entries")) {
           ForEach(entries) { entry in
             // 4.
-            FinancialEntryRow(entry: entry, expenseTextColor: expenseTextColor, incomeTextColor: incomeTextColor)
+            FinancialEntryRow(
+              entry: entry,
+              expenseTextColor: expenseTextColor,
+              incomeTextColor: incomeTextColor
+            )
           }
         }
       }
@@ -93,10 +121,12 @@ struct FinancialEntryRow: View {
   var body: some View {
     HStack {
       Text(entry.isExpense ? "Expense" : "Income")
-        .foregroundColor(entry.isExpense ? expenseTextColor : incomeTextColor)
+        .foregroundColor(entry.isExpense ?
+          expenseTextColor : incomeTextColor)
       Spacer()
       Text("$\(entry.amount, specifier: "%.2f")")
-        .foregroundColor(entry.isExpense ? expenseTextColor : incomeTextColor)
+        .foregroundColor(entry.isExpense ?
+          expenseTextColor : incomeTextColor)
     }
   }
 }

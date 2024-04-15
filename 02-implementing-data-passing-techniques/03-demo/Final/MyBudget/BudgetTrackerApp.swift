@@ -46,10 +46,30 @@ struct FinancialEntry: Identifiable {
 @main
 struct BudgetTrackerApp: App {
   let entries = [
-    FinancialEntry(id: UUID(), amount: 3000, category: "Income", isExpense: false),
-    FinancialEntry(id: UUID(), amount: 120, category: "Groceries", isExpense: true),
-    FinancialEntry(id: UUID(), amount: 500, category: "Technology", isExpense: true),
-    FinancialEntry(id: UUID(), amount: 10, category: "Subscription", isExpense: true)
+    FinancialEntry(
+      id: UUID(),
+      amount: 3000,
+      category: "Income",
+      isExpense: false
+    ),
+    FinancialEntry(
+      id: UUID(),
+      amount: 120,
+      category: "Groceries",
+      isExpense: true
+    ),
+    FinancialEntry(
+      id: UUID(),
+      amount: 500,
+      category: "Technology",
+      isExpense: true
+    ),
+    FinancialEntry(
+      id: UUID(),
+      amount: 10,
+      category: "Subscription",
+      isExpense: true
+    )
   ]
 
   var body: some Scene {
