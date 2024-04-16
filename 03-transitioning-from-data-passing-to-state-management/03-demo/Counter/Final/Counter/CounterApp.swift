@@ -49,7 +49,7 @@ struct CounterView: View {
     Text("Count: \(count)")
 
     Button("Increment") {
-      self.count += 1
+      self.count += 1 // This will attempt to increment the count
     }
   }
 }

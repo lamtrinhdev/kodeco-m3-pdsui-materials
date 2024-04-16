@@ -32,8 +32,6 @@
 
 import SwiftUI
 
-// MARK: - Environment Values
-
 struct ExpenseTextColorKey: EnvironmentKey {
   static let defaultValue: Color = .red
 }

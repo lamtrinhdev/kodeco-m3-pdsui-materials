@@ -121,10 +121,12 @@ struct FinancialEntryRow: View {
   var body: some View {
     HStack {
       Text(entry.isExpense ? "Expense" : "Income")
+        // 6.
         .foregroundColor(entry.isExpense ?
           expenseTextColor : incomeTextColor)
       Spacer()
       Text("$\(entry.amount, specifier: "%.2f")")
+        // 5.
         .foregroundColor(entry.isExpense ?
           expenseTextColor : incomeTextColor)
     }
